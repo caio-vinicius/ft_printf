@@ -11,11 +11,23 @@
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include <stdio.h>
 
 int main(void)
 {
-    // c, s, d, i, %
-    ft_printf("o %caio gosta de comer %s", 'c', "arroz");
-    //ft_printf("%5d");
-    //ft_printf("%0d");
+	//teste com c
+	//ft_printf("MEU PRINTF: %03c|\n", 'c');
+	//printf("PRINTF: %-5c\n", 'c');
+	//ft_printf("PRINTF: %c|\n", '\0');
+	//printf("PRINTF: %c|\n", '\0');
+	//ft_printf("MEU PRINTF: %5c\n", '\0');
+	//printf("PRINTF: %5c\n", '\0');
+	//ft_printf("MEU PRINTF: %-5c\n", '\0');
+	//printf("PRINTF: %-5c\n", '\0');
+	//ft_printf("MEU PRINTF: %c\n", 'c');
+	//printf("PRINTF: %c\n", 'c');
+
+	//teste com x e X
+	ft_printf("hex: %2x", 10);
+	return (0);
 }

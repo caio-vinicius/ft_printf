@@ -57,9 +57,9 @@ int		has_digit(int i, char *str)
 	return (i);
 }
 
-int	ft_putchar_x(char c, int x)
+int	ft_putchar_x(char c, unsigned int x)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while (i < x)
@@ -69,4 +69,30 @@ int	ft_putchar_x(char c, int x)
 	}
 
 	return (i);
+}
+
+char	*ft_itoa_base(int value, int base)
+{
+	int			i;
+	char		*str;
+	int			tmp;
+	
+	i = 0;
+	tmp = value;
+	while (tmp >= base)
+	{
+		tmp = tmp / base;
+		i++;
+	}	
+	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	str[i + 1] = '\0';
+	while (i >= 0)
+	{
+		tmp = value % base;
+		str[i] = (tmp >= 10) ? tmp - 10 + 'a' : tmp + '0';
+		value /= base;
+		i--;
+	}
+	return (str);
 }

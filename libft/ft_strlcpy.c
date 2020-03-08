@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printc.c                                           :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 18:26:35 by csouza-f         ###   ########.fr       */
+/*   Created: 2020/01/20 12:51:34 by csouza-f          #+#    #+#             */
+/*   Updated: 2020/02/03 18:04:27 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "libft.h"
 
-void	printc(i_list *die, va_list ap)
+size_t	ft_strlcpy(char *dest, const char *src, unsigned long int dstsize)
 {
-	int c;
-	int len;
-	// here
-	len = (die->asterisk_width) ? va_arg(ap, int) : 0;
-	len = (die->asterisk_precision) ? va_arg(ap, int) : 0;
-	c = va_arg(ap, int);
-	if (die->minus)
+	unsigned long int i;
+
+	i = 0;
+	if (!dest || !src)
+		return (0);
+	if (dstsize > 0)
 	{
-		die->len += ft_putchar(c);
-		die->len += ft_putchar_x(' ', len-1);
+		while (src[i] && i + 1 < dstsize)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	else if (!die->minus)
-	{
-		die->len += ft_putchar_x(' ', die->width-1);
-		die->len += ft_putchar(c);
-	}
+	return (ft_strlen(src));
 }

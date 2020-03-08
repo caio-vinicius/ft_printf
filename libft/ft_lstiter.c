@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printx.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: csouza-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/07 15:27:29 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 15:36:46 by csouza-f         ###   ########.fr       */
+/*   Created: 2020/01/31 13:01:08 by csouza-f          #+#    #+#             */
+/*   Updated: 2020/01/31 15:22:53 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "libft.h"
 
-void	printx(i_list *die, va_list ap)
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -43,8 +43,9 @@ void	prints(i_list *die, va_list ap);
 void	printu(i_list *die, va_list ap);
 void	printx(i_list *die, va_list ap);
 
-int     ft_putchar_x(char c, int x);
+int     ft_putchar_x(char c, unsigned int x);
 int     has_digit(int i, char *str);
+char	*ft_itoa_base(int value, int base);
 
 #endif
 

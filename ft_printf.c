@@ -30,8 +30,6 @@ static void	sort_type(i_list *die, va_list ap)
 			printx(die, ap);
 		else if (die->type == '%')
 			die->len += ft_putchar('%');
-		else
-			die->len += ft_putchar('s');
 	}
 }
 
@@ -53,7 +51,7 @@ static int	identifier_digit_asterisk(char *str, i_list *die, int i)
 
 static i_list	*create_list(i_list *die)
 {
-	if (!(die = malloc(sizeof(i_list *))))
+	if (!(die = malloc(sizeof(i_list))))
 		return (0);
 	die->asterisk_precision = 0;
 	die->asterisk_width = 0;
@@ -107,26 +105,9 @@ int	ft_printf(const char *format, ...)
 	while ((die = find_one_formater(str)))
 	{
 		sort_type(die, ap);
-		/*ft_putchar('\n');
-		ft_putnbr(die->minus);
-		ft_putstr("<- minus\n");
-		ft_putnbr(die->zero);
-		ft_putstr("<- zero\n");
-		ft_putchar(die->type);
-		ft_putstr("<- type\n");
-		ft_putnbr(die->precision);
-		ft_putstr("<- precision\n");
-		ft_putnbr(die->width);
-		ft_putstr("<- width\n");
-		ft_putnbr(die->asterisk_width);
-		ft_putstr("<- asterisk_width\n");
-		ft_putnbr(die->asterisk_precision);
-		ft_putstr("<- asterisk_precision\n");
-		ft_putnbr(die->len);
-		ft_putstr("<- len\n");
-		ft_putchar('\n');*/
 		i += die->len;
 		free(die);
 	}
+	va_end(ap);
 	return (i);
 }
