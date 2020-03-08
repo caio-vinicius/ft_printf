@@ -28,6 +28,22 @@ int main(void)
 	//printf("PRINTF: %c\n", 'c');
 
 	//teste com x e X
-	ft_printf("hex: %2x", 10);
+	/*ft_printf("%+#.5x\n", 0);
+	ft_printf("%+#.5x\n", 312);
+	ft_printf("%7X\n", 255);
+	ft_printf("%#7X\n", 255);
+	ft_printf("%-7X\n", 255);
+	ft_printf("%-#7X\n", 255);
+	ft_printf("%07x\n", 255);
+	ft_printf("%0#7x\n", 255);
+	ft_printf("%x\n", 0);
+	ft_printf("%#x\n", 0);
+	ft_printf("%x\n", 255);
+	ft_printf("%#x\n", 255);
+	ft_printf("%X\n", 255);
+	ft_printf("%#X\n", 255);
+	ft_printf("hex: %2x", 10);*/
+	//ft_printf("%x", 10);
+	ft_printf("%X", 10);
 	return (0);
 }
