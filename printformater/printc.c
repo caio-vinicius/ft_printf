@@ -3,37 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   printc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 18:26:35 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/08 19:41:59 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printc(i_list *die, va_list ap)
+void	printc(s_mold *mold, va_list ap)
 {
 	int c;
 	int len;
 
 	len = 0;
-	if (die->asterisk_width == 1)
+	if (mold->asterisk_width == 1)
 		len = va_arg(ap, int);
-	else if (die->asterisk_precision == 1)
+	else if (mold->asterisk_precision == 1)
 		len = va_arg(ap, int);
-	else if (die->width)
-		len = die->width;
+	else if (mold->width)
+		len = mold->width;
 	c = va_arg(ap, int);
 	len += (len == 0) ? 0 : -1;
-	if (die->minus)
+	if (mold->minus)
 	{
-		die->len += ft_putchar(c);
-		die->len += ft_putchar_x(' ', len);
+		mold->len += ft_putchar(c);
+		mold->len += ft_putchar_x(' ', len);
 	}
-	else if (!die->minus)
+	else if (!mold->minus)
 	{
-		die->len += ft_putchar_x(' ', len);
-		die->len += ft_putchar(c);
+		mold->len += ft_putchar_x(' ', len);
+		mold->len += ft_putchar(c);
 	}
 }

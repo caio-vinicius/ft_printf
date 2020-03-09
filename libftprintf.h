@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:31:36 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 15:42:49 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/08 19:38:50 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #define SPECIFIERS "cspdiuxX%"
 #define FLAGS "-0"
 
-typedef struct	identifier_list
+typedef struct	s_mold
 {
     int minus;
     int zero;
@@ -30,18 +30,18 @@ typedef struct	identifier_list
     int asterisk_width;
     int asterisk_precision;
     int len;
-}				i_list;
+}				s_mold;
 
 int     ft_printf(const char * format, ...);
 int     ft_putstr(char *str);
 int     ft_putchar(char c);
 void	ft_putnbr(int nb);
-void	printc(i_list *die, va_list ap);
-void	printdi(i_list *die, va_list ap);
-void	printp(i_list *die, va_list ap);
-void	prints(i_list *die, va_list ap);
-void	printu(i_list *die, va_list ap);
-void	printx(i_list *die, va_list ap);
+void	printc(s_mold *mold, va_list ap);
+void	printdi(s_mold *mold, va_list ap);
+void	printp(s_mold *mold, va_list ap);
+void	prints(s_mold *mold, va_list ap);
+void	printu(s_mold *mold, va_list ap);
+void	printx(s_mold *mold, va_list ap);
 
 int     ft_putchar_x(char c, unsigned int x);
 int     has_digit(int i, char *str);

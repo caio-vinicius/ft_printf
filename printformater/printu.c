@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   printu.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:31 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 15:40:47 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/08 19:42:54 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printu(i_list *die, va_list ap)
+void	printu(s_mold *mold, va_list ap)
 {
 
 }

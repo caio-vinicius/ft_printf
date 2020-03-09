@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/06 09:23:40 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/08 19:43:46 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	//printf("PRINTF: %5c\n", '\0');
 	//ft_printf("MEU PRINTF: %-5c\n", '\0');
 	//printf("PRINTF: %-5c\n", '\0');
-	//ft_printf("MEU PRINTF: %c\n", 'c');
+	//ft_printf("MEU PRINTF: %c", 'c');
 	//printf("PRINTF: %c\n", 'c');
 
 	//teste com x e X
@@ -43,7 +43,8 @@ int main(void)
 	ft_printf("%X\n", 255);
 	ft_printf("%#X\n", 255);
 	ft_printf("hex: %2x", 10);*/
-	//ft_printf("%x", 10);
-	ft_printf("%X", 10);
+	//ft_printf("%x", 100);
+	//ft_printf("%X", 10);
+
 	return (0);
 }

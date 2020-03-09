@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printx.c                                        :+:      :+:    :+:   */
+/*   printx.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:29 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 15:36:46 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/08 19:42:54 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printx(i_list *die, va_list ap)
+void	printx(s_mold *mold, va_list ap)
 {
     int n;
 	int len;
     char *str;
 
 	len = 0;
-	if (die->asterisk_width == 1)
+	if (mold->asterisk_width == 1)
 		len = va_arg(ap, int);
-	else if (die->asterisk_precision == 1)
+	else if (mold->asterisk_precision == 1)
 		len = va_arg(ap, int);
-	else if (die->width)
-		len = die->width;
+	else if (mold->width)
+		len = mold->width;
 	n = va_arg(ap, int);
 	len += (len == 0) ? 0 : -1;
-    if (die->type == 'x')
-        str = ft_strmapi(ft_itoa_base(n, 16), &ft_tolower);
-    else if (die->type == 'X')
-        str = ft_strmapi(ft_itoa_base(n, 16), &ft_toupper);
-	if (die->minus)
+    if (mold->type == 'x')
+        str = ft_strmapi(ft_itoa_base(n, 16), ft_tolower);
+    else if (mold->type == 'X')
+        str = ft_strmapi(ft_itoa_base(n, 16), ft_toupper);
+	if (mold->minus)
 	{
-		die->len += ft_putstr(str);
-		die->len += ft_putchar_x(' ', len);
+		mold->len += ft_putstr(str);
+		mold->len += ft_putchar_x(' ', len);
 	}
-	else if (!die->minus)
+	else if (!mold->minus)
 	{
-		die->len += ft_putchar_x(' ', len);
-		die->len += ft_putstr(str);
+		mold->len += ft_putchar_x(' ', len);
+		mold->len += ft_putstr(str);
 	}
 }
