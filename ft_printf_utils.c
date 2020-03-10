@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:44:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/07 17:11:39 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/09 11:33:28 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,38 @@ int	ft_putchar_x(char c, unsigned int x)
 	return (i);
 }
 
+char	*ft_rstr_x(char c, unsigned int x)
+{
+	unsigned int	i;
+	char			*str;
+
+	i = 0;
+	if (!(str = ft_calloc(x + 1, sizeof(char))))
+		return (0);
+	while (i < x)
+	{
+		str[i] = c;
+		i++;
+	}
+
+	return (str);
+}
+
 char	*ft_itoa_base(int value, int base)
 {
 	int			i;
 	char		*str;
 	int			tmp;
-	
+
 	i = 0;
 	tmp = value;
 	while (tmp >= base)
 	{
 		tmp = tmp / base;
 		i++;
-	}	
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	}
+	if (!(str = (char *)ft_calloc((i + 1), sizeof(char))))
 		return (NULL);
-	str[i + 1] = '\0';
 	while (i >= 0)
 	{
 		tmp = value % base;

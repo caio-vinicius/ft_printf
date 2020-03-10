@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/08 19:41:59 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/09 09:19:18 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	printc(s_mold *mold, va_list ap)
 		len = va_arg(ap, int);
 	else if (mold->width)
 		len = mold->width;
+	len = mold->width;
 	c = va_arg(ap, int);
 	len += (len == 0) ? 0 : -1;
 	if (mold->minus)

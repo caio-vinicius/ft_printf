@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:27:11 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/08 21:10:03 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/09 09:51:05 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 /*
 **				| sort_specifier function |
-**		When my mold is done i can call this function 
-**		to choose what type of replace i will do, 
+**		When my mold is done i can call this function
+**		to choose what type of replace i will do,
 **		if matches something will be printed.
 */
+
 static void	sort_specifier(s_mold *mold, va_list ap)
 {
 	if (ft_strchr(SPECIFIERS, mold->type))
@@ -38,12 +39,14 @@ static void	sort_specifier(s_mold *mold, va_list ap)
 			mold->len += ft_putchar('%');
 	}
 }
+
 /*
 **				| search_dora function |
 **		yes, dora. (d)igit or (a)sterisk. this function
 **		search for asterisk or digit and run with my
 **			counter (variable i).
 */
+
 static int	search_dora(char *str, s_mold *mold, int i)
 {
 	if (str[i - 1] == '.')
@@ -59,11 +62,13 @@ static int	search_dora(char *str, s_mold *mold, int i)
 	i = has_digit(i, str);
 	return (i);
 }
+
 /*
 **				| create_mold function |
 **		this function is used to initialize my struct.
 **			it set all proprieties with 0.
 */
+
 static s_mold	*create_mold(s_mold *mold)
 {
 	if (!(mold = malloc(sizeof(s_mold))))
@@ -78,18 +83,20 @@ static s_mold	*create_mold(s_mold *mold)
 	mold->len = 0;
 	return (mold);
 }
+
 /*
 **				| findone_formater function |
 **		where my mold is effective done. if has a %
 **		he analyze until specifier was found, if not
 **		just print the character and always return mold
 */
+
 static s_mold	*findone_formater(char *str)
 {
-	static int	i;
-	s_mold		*mold;
+	static int		i;
+	s_mold			*mold;
 
-	create_mold(mold);
+	mold = create_mold(mold);
 	while (str[i])
 	{
 		if (!(str[i] == '%'))
@@ -109,30 +116,33 @@ static s_mold	*findone_formater(char *str)
 		}
 		return (mold);
 	}
+	i = 0;
 	return (0);
 }
+
 /*
 **				| ft_printf function |
 **		here i call my aux above functions to everthing
 **		works ok. here too i free my mold, va_end and
 **		return lenght of string printed by printf.
 */
+
 int	ft_printf(const char *format, ...)
 {
 	char	*str;
-	int		i;
+	int		len;
 	va_list ap;
 	s_mold	*mold;
 
-	i = 0;
-	va_start(ap, format);
+	len = 0;
 	str = (char *)format;
+	va_start(ap, format);
 	while ((mold = findone_formater(str)))
 	{
 		sort_specifier(mold, ap);
-		i += mold->len;
+		len += mold->len;
 		free(mold);
 	}
 	va_end(ap);
-	return (i);
+	return (len);
 }

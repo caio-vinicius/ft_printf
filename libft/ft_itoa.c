@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/31 16:24:18 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/02/03 16:15:47 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/09 10:41:54 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*make_itoa(int n, int count, char *str, int base)
+char	*make_itoa(int n, int count, char *str)
 {
 	unsigned int	num;
 
@@ -21,8 +21,8 @@ char	*make_itoa(int n, int count, char *str, int base)
 	num = (n > 0) ? n : -n;
 	while (num)
 	{
-		str[count] = (num % base) + '0';
-		num /= base;
+		str[count] = (num % 10) + '0';
+		num /= 10;
 		count--;
 	}
 	if (!count)
@@ -30,7 +30,7 @@ char	*make_itoa(int n, int count, char *str, int base)
 	return (str);
 }
 
-char	*ft_itoa(int n, int base)
+char	*ft_itoa(int n)
 {
 	int				count;
 	unsigned int	num;
@@ -53,5 +53,5 @@ char	*ft_itoa(int n, int base)
 	}
 	if (!(str = malloc(count + 1)))
 		return (NULL);
-	return (make_itoa(n, count, str, base));
+	return (make_itoa(n, count, str));
 }
