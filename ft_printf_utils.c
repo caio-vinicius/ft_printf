@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:44:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/09 11:33:28 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 14:05:04 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	ft_putchar_x(char c, unsigned int x)
 	return (i);
 }
 
-char	*ft_rstr_x(char c, unsigned int x)
+char	*r_str_x(char c, unsigned int x)
 {
 	unsigned int	i;
 	char			*str;
@@ -86,6 +86,24 @@ char	*ft_rstr_x(char c, unsigned int x)
 	}
 
 	return (str);
+}
+
+int	putcs_x(char *str, int c, int x, int time)
+{
+	int len;
+
+	len = 0;
+	if (time == 0)
+	{
+		len += ft_putstr(str);
+		len += ft_putchar_x(c, x);
+	}
+	else if (time == 1)
+	{
+		len += ft_putchar_x(c, x);
+		len += ft_putstr(str);
+	}
+	return (len);
 }
 
 char	*ft_itoa_base(int value, int base)

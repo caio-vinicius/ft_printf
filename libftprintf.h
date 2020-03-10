@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:31:36 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/09 11:13:37 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 16:05:31 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ void	printp(s_mold *mold, va_list ap);
 void	prints(s_mold *mold, va_list ap);
 void	printu(s_mold *mold, va_list ap);
 void	printx(s_mold *mold, va_list ap);
+void	printpercent(s_mold *mold, va_list ap);
 
 int		ft_putchar_x(char c, unsigned int x);
-char	*ft_rstr_x(char c, unsigned int x);
+char	*r_str_x(char c, unsigned int x);
 int		has_digit(int i, char *str);
 char	*ft_itoa_base(int value, int base);
+int		putcs_x(char *str, int c, int x, int time);
 
 #endif

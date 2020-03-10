@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:27:11 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/09 09:51:05 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 15:20:03 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	sort_specifier(s_mold *mold, va_list ap)
 		else if (mold->type == 'x' || mold->type == 'X')
 			printx(mold, ap);
 		else if (mold->type == '%')
-			mold->len += ft_putchar('%');
+			printpercent(mold, ap);
 	}
 }
 
@@ -76,7 +76,7 @@ static s_mold	*create_mold(s_mold *mold)
 	mold->asterisk_precision = 0;
 	mold->asterisk_width = 0;
 	mold->minus = 0;
-	mold->precision = 0;
+	mold->precision = -1;
 	mold->type = 0;
 	mold->zero = 0;
 	mold->width = 0;

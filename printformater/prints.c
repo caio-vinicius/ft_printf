@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prints.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:12 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/08 19:42:54 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/10 15:18:58 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,8 @@ void	prints(s_mold *mold, va_list ap)
 	char *str;
 	int len;
 
-	len = ft_strlen(str);
-	str = (va_arg(ap, char *));
-	/*if (mold->width > len)
-	{
-		if (mold->minus)
-		{
-			mold->len += ft_putstr(str);
-			mold->len += ft_putchar_x(' ', (mold->width - len));
-		}
-	}*/
+	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
+	(mold->asterisk_precision == 1) ? len = va_arg(ap, int) : 0;
+	str = (va_arg(ap, char *));	
 	mold->len += ft_putstr(str);
 }
