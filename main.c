@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/11 19:31:35 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/11 20:20:34 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,9 +129,53 @@ int main(void)
 	ft_printf("%d|\n", -2147483647);*/
 	//
 	//teste com p
-	int a;
-	printf("%p|\n", &a);
+	/*int a;
+	printf("%-20p|\n", &a);
+	ft_printf("%-20p|\n", &a);
+	printf("%*p|\n", -20, &a);
+	ft_printf("%*p|\n", -20, &a);*/
+	//printf("%020p|\n", &a); } undefined behavior
+	//ft_printf("%020p|\n", &a) }; undefined behavior
+	/*printf("%p|\n", &a);
 	ft_printf("%p|\n", &a);
+	printf("%15p|\n", &a);
+	ft_printf("%15p|\n", &a);*/
+	//printf("%.20p|\n", &a); } undefined behavior
+	//ft_printf("%.20p|\n", &a); } undefined behavior
+	//
+	//teste com u
+	printf("%*u|\n", -3, -3);
+	ft_printf("%*u|\n", -3, -3);
+	printf("%3u|\n", 3);
+	ft_printf("%3u|\n", 3);
+	printf("%3.3u|\n", 3);
+	ft_printf("%3.3u|\n", 3);
+	printf("%-3.3u|\n", 3);
+	ft_printf("%-3.3u|\n", 3);
+	printf("%04.3u|\n", 3);
+	ft_printf("%04.3u|\n", 3);
+	printf("%-4.3u|\n", 3);
+	ft_printf("%-4.3u|\n", 3);
+	printf("%.3u|\n", 3);
+	ft_printf("%.3u|\n", 3);
+	printf("%.3u|\n", 3);
+	ft_printf("%.3u|\n", 3);
+	printf("%.6u|\n", 3);
+	ft_printf("%.6u|\n", 3);
+	printf("%2.6u|\n", 3);
+	ft_printf("%2.6u|\n", 3);
+	printf("%2.6u|\n", 332);
+	ft_printf("%2.6u|\n", 332);
+	printf("%2.6u|\n", 332332);
+	ft_printf("%2.6u|\n", 332332);
+	printf("%2.6u|\n", 3323323);
+	ft_printf("%2.6u|\n", 3323323);
+	printf("%*.*u|\n", 6, 3, 56);
+	ft_printf("%*.*u|\n", 6, 3, 56);
+	printf("%u|\n", -2147483647);
+	ft_printf("%u|\n", -2147483647);
+	printf("%u|\n", -2147483647);
+	ft_printf("%u|\n", -2147483647);
 
 	return (0);
 }
