@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:44:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 21:51:34 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/11 19:31:13 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,11 +124,11 @@ char *ft_str_until(char *str, int len, int until)
 	return (newstr);
 }
 
-char	*ft_itoa_base(int value, int base)
+char	*ft_itoa_base(size_t value, int base)
 {
 	int			i;
 	char		*str;
-	int			tmp;
+	size_t		tmp;
 
 	i = 0;
 	tmp = value;

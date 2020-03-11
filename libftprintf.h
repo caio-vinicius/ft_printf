@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:31:36 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 20:44:29 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/11 19:23:49 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	printpercent(s_mold *mold, va_list ap);
 int		ft_putchar_x(char c, unsigned int x);
 char	*r_str_x(char c, unsigned int x);
 int		has_digit(int i, char *str);
-char	*ft_itoa_base(int value, int base);
+char	*ft_itoa_base(size_t value, int base);
 int		putcs_x(char *str, int c, int x, int time);
 char	*ft_str_until(char *str, int len, int until);
 

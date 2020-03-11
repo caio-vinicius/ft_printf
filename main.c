@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 22:42:22 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/11 19:31:35 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,48 @@ int main(void)
 	printf("%*.*s|\n", 5, -2, "caio");
 	ft_printf("%*.*s|\n", 5, -2,"caio");
 	printf("%*.1s|\n", 5, "caio");
-	ft_printf("%*.1s|\n", 5, "caio");*/
-	//printf("%6s|\n", "caio");
-	ft_printf("%.2s|\n", "caio");
+	ft_printf("%*.1s|\n", 5, "caio");
+	//printf("%0-6s|\n", "caio");
+	ft_printf("%0-6s|\n", "caio");*/
+	//
+	//teste com d e i
+	/*ft_printf("%*d|\n", -3, -3);
+	printf("%*d|\n", -3, -3);
+	printf("%3i|\n", 3);
+	ft_printf("%3i|\n", 3);
+	printf("%3.3i|\n", 3);
+	ft_printf("%3.3i|\n", 3);
+	printf("%-3.3i|\n", 3);
+	ft_printf("%-3.3i|\n", 3);
+	printf("%04.3i|\n", 3);
+	ft_printf("%04.3i|\n", 3);
+	printf("%-4.3i|\n", 3);
+	ft_printf("%-4.3i|\n", 3);
+	printf("%.3d|\n", 3);
+	ft_printf("%.3d|\n", 3);
+	printf("%.3d|\n", 3);
+	ft_printf("%.3d|\n", 3);
+	printf("%.6d|\n", 3);
+	ft_printf("%.6d|\n", 3);
+	printf("%2.6d|\n", 3);
+	ft_printf("%2.6d|\n", 3);
+	printf("%2.6d|\n", 332);
+	ft_printf("%2.6d|\n", 332);
+	printf("%2.6d|\n", 332332);
+	ft_printf("%2.6d|\n", 332332);
+	printf("%2.6d|\n", 3323323);
+	ft_printf("%2.6d|\n", 3323323);
+	printf("%*.*d|\n", 6, 3, 56);
+	ft_printf("%*.*d|\n", 6, 3, 56);
+	printf("%d|\n", -2147483647);
+	ft_printf("%d|\n", -2147483647);
+	printf("%d|\n", -2147483647);
+	ft_printf("%d|\n", -2147483647);*/
+	//
+	//teste com p
+	int a;
+	printf("%p|\n", &a);
+	ft_printf("%p|\n", &a);
 
 	return (0);
 }
