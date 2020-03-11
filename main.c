@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 16:56:35 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 22:42:22 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,27 @@ int main(void)
 	ft_printf("%.*x|\n", -3, 1);*/
 	//
 	//teste com %
-	ft_printf("%04%|\n");
-	printf("%04%|\n");
+	/*ft_printf("%04%|\n");
 	ft_printf("%-4%|\n");
-	printf("%-4%|\n");
 	ft_printf("%3%|\n");
-	printf("%3%|\n");
 	ft_printf("%*%|\n", 3);
-	printf("%*%|\n", 3);
-	ft_printf("%*%|\n", -3);
+	ft_printf("%*%|\n", -3);*/
 	//
-	//teste com 
+	//teste com s
+	/*printf("%.3s|\n", "caio");
+	ft_printf("%.3s|\n", "caio");
+	printf("%10.2s|\n", "caio");
+	ft_printf("%10.2s|\n", "caio");
+	printf("%*.*s|\n", -5, 2, "caio");
+	ft_printf("%*.*s|\n", -5, 2,"caio");
+	printf("%*.*s|\n", -5, -2, "caio");
+	ft_printf("%*.*s|\n", -5, -2,"caio");
+	printf("%*.*s|\n", 5, -2, "caio");
+	ft_printf("%*.*s|\n", 5, -2,"caio");
+	printf("%*.1s|\n", 5, "caio");
+	ft_printf("%*.1s|\n", 5, "caio");*/
+	//printf("%6s|\n", "caio");
+	ft_printf("%.2s|\n", "caio");
+
 	return (0);
 }

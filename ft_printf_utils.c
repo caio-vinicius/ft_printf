@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:44:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 14:05:04 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 21:51:34 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,24 @@ int	putcs_x(char *str, int c, int x, int time)
 		len += ft_putstr(str);
 	}
 	return (len);
+}
+
+char *ft_str_until(char *str, int len, int until)
+{
+	int i;
+	char *newstr;
+
+	i = 0;
+	if (until > len)
+		return (0);
+	if (!(newstr = ft_calloc(until + 1, sizeof(char))))
+		return (0);
+	while (i < until)
+	{
+		newstr[i] = str[i];
+		i++;
+	}
+	return (newstr);
 }
 
 char	*ft_itoa_base(int value, int base)

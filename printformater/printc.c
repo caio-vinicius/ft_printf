@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 14:18:31 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 22:16:53 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@ void	printc(s_mold *mold, va_list ap)
 	int len;
 
 	len = 0;
-	if (mold->asterisk_width == 1)
-		len = va_arg(ap, int);
-	else if (mold->asterisk_precision == 1)
-		len = va_arg(ap, int);
-	else if (mold->width)
-		len = mold->width;
-	len = mold->width;
+	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
+	(mold->asterisk_precision == 1) ? len = va_arg(ap, int) : 0;
+	(mold->width > 0) ? len = mold->width : 0;
 	c = va_arg(ap, int);
 	len += (len == 0) ? 0 : -1;
 	if (mold->minus)

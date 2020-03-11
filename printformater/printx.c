@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printx.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
+/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:29 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/10 16:35:54 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/10 22:15:12 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	printx(s_mold *mold, va_list ap)
 
 	len = 0;
 	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
-	(mold->asterisk_precision == 1) ? len = va_arg(ap, int) : 0;
+	(mold->asterisk_precision == 1) ? mold->precision = va_arg(ap, int) : 0;
 	if (len < 0)
 	{
 		mold->minus = 1;
