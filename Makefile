@@ -6,7 +6,7 @@
 #    By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/15 16:26:14 by csouza-f          #+#    #+#              #
-#    Updated: 2020/03/12 11:40:03 by csouza-f         ###   ########.fr        #
+#    Updated: 2020/03/12 12:43:06 by csouza-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,45 +18,62 @@ F_PF		=	./printformater
 
 F_UTILS		=	./utils
 
-SRC		=	ft_printf.c						\
-			libftprintf.h					\
-			${F_INCLUDES}/ft_printf_utils.c	\
-			${F_INCLUDES}/ft_printf_utils.c	\
-			${F_PF}/printc.c				\
-			${F_PF}/printdi.c				\
-			${F_PF}/printp.c				\
-			${F_PF}/printpercent.c			\
-			${F_PF}/prints.c				\
-			${F_PF}/printu.c				\
-			${F_PF}/printx.c				\
-			${F_UTILS}/ft_itoa_base.c		\
-			${F_UTILS}/ft_putchar_x.c		\
-			${F_UTILS}/ft_str_until.c		\
-			${F_UTILS}/putcs_x.c			\
-			${F_UTILS}/r_str_x.c			\
+F_LIBFT		=	./libft
 
-FLAGS = -Wall -Werror -Wextra
+SRCS		=	ft_printf.c						\
+				${F_INCLUDES}/ft_printf_utils.c	\
+				${F_INCLUDES}/ft_printf_utils.c	\
+				${F_PF}/printc.c				\
+				${F_PF}/printdi.c				\
+				${F_PF}/printp.c				\
+				${F_PF}/printpercent.c			\
+				${F_PF}/prints.c				\
+				${F_PF}/printu.c				\
+				${F_PF}/printx.c				\
+				${F_UTILS}/ft_itoa_base.c		\
+				${F_UTILS}/ft_putchar_x.c		\
+				${F_UTILS}/ft_str_until.c		\
+				${F_UTILS}/putcs_x.c			\
+				${F_UTILS}/r_str_x.c
 
-NOBJS := $(SRC:func/%=%)
+RE_O 		= 	ft_printf.o						\
+				${F_INCLUDES}/ft_printf_utils.o	\
+				${F_PF}/printc.o				\
+				${F_PF}/printdi.o				\
+				${F_PF}/printp.o				\
+				${F_PF}/printperoent.o			\
+				${F_PF}/prints.o				\
+				${F_PF}/printu.o				\
+				${F_PF}/printx.o				\
+				${F_UTILS}/ft_itoa_base.o		\
+				${F_UTILS}/ft_putohar_x.o		\
+				${F_UTILS}/ft_str_until.o		\
+				${F_UTILS}/putos_x.o			\
+				${F_UTILS}/r_str_x.o
 
-OBJS = $(NOBJS:.c=.o)
+OBJS = $(SRCS:.c=.o)
 
-LIBFT = libft
+CC = gcc
 
-all: $(NAME)
+FLAGS = -c -Wall -Wextra -Werror
 
-$(NAME):
-	make -C $(LIBFT)
+INCLUDES = libftprintf.h
+
+$(NAME): $(OBJS)
+	$(MAKE) -C ./libft
 	cp libft/libft.a $(NAME)
-	gcc $(FLAGS) -c $(SRC) -I $(INC)
+	$(CC) $(FLAGS) -I $(INCLUDES) $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
 
-clean:
-	rm -f $(OBJS)
-	make clean -C $(LIBFT)
+all : $(NAME)
 
-fclean: clean
-	rm -f $(NAME)
-	make fclean -C $(LIBFT)
+clean :
+	$(MAKE) clean -C ./libft
+	rm -rf $(RE_O)
+	rm -rf $(OBJS)
 
-re: fclean all
+fclean : clean
+	$(MAKE) fclean -C ./libft
+	rm -rf $(NAME)
+
+re : fclean all

@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 10:14:55 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/12 16:05:58 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 {
 	int a;
 	//teste com c
-	printf("%s", "TESTE COM C: \n");
+	/*printf("%s", "TESTE COM C: \n");
 	ft_printf("PRINTF: %-5c|\n", 'c');
 	printf("PRINTF: %-5c|\n", 'c');
 	ft_printf("PRINTF: %c|\n", '\0');
@@ -72,10 +72,10 @@ int main(void)
 	printf("%-3x|\n", 10);
 	ft_printf("%0-0-0-3x|\n", 10);
 	printf("%.*x|\n", -3, 1);
-	ft_printf("%.*x|\n", -3, 1);
+	ft_printf("%.*x|\n", -3, 1);*/
 	//
 	//teste com %
-	printf("%s", "TESTE COM %%: \n");
+	/*printf("%s", "TESTE COM %%: \n");
 	ft_printf("%04%|\n");
 	printf("%04%|\n");
 	ft_printf("%-4%|\n");
@@ -83,10 +83,22 @@ int main(void)
 	ft_printf("%3%|\n");
 	printf("%3%|\n");
 	ft_printf("%*%|\n", -3);
-	printf("%*%|\n", -3);
+	printf("%*%|\n", -3);*/
+	/*ft_printf("%%|\n");
+	printf("%%|\n");
+	ft_printf("%5%|\n");
+	printf("%5%|\n");
+	ft_printf("%-5%|\n");
+	printf("%-5%|\n");
+	ft_printf("%05%|\n");
+	printf("%05%|\n");
+	ft_printf("%0-5%|\n");
+	printf("%0-5%|\n");*/
+	ft_printf("%|\n");
+	//printf("%|\n");
 	//
 	//teste com s
-	printf("%s", "TESTE COM S: \n");
+	/*printf("%s", "TESTE COM S: \n");
 	printf("%.3s|\n", "caio");
 	ft_printf("%.3s|\n", "caio");
 	printf("%10.2s|\n", "caio");
@@ -185,7 +197,7 @@ int main(void)
 	printf("%u|\n", 2147483647);
 	ft_printf("%u|\n", 2147483647);
 	printf("%u|\n", -2147483647);
-	ft_printf("%u|\n", -2147483647);
+	ft_printf("%u|\n", -2147483647);*/
 	
 	return (0);
 }
