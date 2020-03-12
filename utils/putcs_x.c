@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printc.c                                           :+:      :+:    :+:   */
+/*   putcs_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 10:50:51 by csouza-f         ###   ########.fr       */
+/*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
+/*   Updated: 2020/03/12 11:01:12 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printc(t_mold *mold, va_list ap)
+int	putcs_x(char *str, int c, int x, int time)
 {
-	int c;
 	int len;
 
 	len = 0;
-	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
-	(mold->asterisk_precision == 1) ? len = va_arg(ap, int) : 0;
-	(mold->width > 0) ? len = mold->width : 0;
-	c = va_arg(ap, int);
-	len += (len == 0) ? 0 : -1;
-	if (mold->minus)
+	if (time == 0)
 	{
-		mold->len += ft_putchar(c);
-		mold->len += ft_putchar_x(' ', len);
+		len += ft_putstr(str);
+		len += ft_putchar_x(c, x);
 	}
-	else if (!mold->minus)
+	else if (time == 1)
 	{
-		mold->len += ft_putchar_x(' ', len);
-		mold->len += ft_putchar(c);
+		len += ft_putchar_x(c, x);
+		len += ft_putstr(str);
 	}
+	return (len);
 }

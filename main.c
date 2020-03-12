@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/11 20:20:34 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/12 10:14:55 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int main(void)
 {
+	int a;
 	//teste com c
-	/*ft_printf("PRINTF: %-5c|\n", 'c');
+	printf("%s", "TESTE COM C: \n");
+	ft_printf("PRINTF: %-5c|\n", 'c');
 	printf("PRINTF: %-5c|\n", 'c');
 	ft_printf("PRINTF: %c|\n", '\0');
 	printf("PRINTF: %c|\n", '\0');
@@ -25,10 +27,11 @@ int main(void)
 	ft_printf("PRINTF: %-5c|\n", '\0');
 	printf("PRINTF: %-5c|\n", '\0');
 	ft_printf("PRINTF: %c|\n", 'c');
-	printf("PRINTF: %c|\n", 'c');*/
+	printf("PRINTF: %c|\n", 'c');
 	//
 	//teste com x e X
-	/*ft_printf("PRINTF: %7X|\n", 255);
+	printf("%s", "TESTE COM x e X: \n");
+	ft_printf("PRINTF: %7X|\n", 255);
 	printf("PRINTF: %7X|\n", 255);
 	ft_printf("PRINTF: %7x|\n", 255);
 	printf("PRINTF: %7x|\n", 255);
@@ -69,17 +72,22 @@ int main(void)
 	printf("%-3x|\n", 10);
 	ft_printf("%0-0-0-3x|\n", 10);
 	printf("%.*x|\n", -3, 1);
-	ft_printf("%.*x|\n", -3, 1);*/
+	ft_printf("%.*x|\n", -3, 1);
 	//
 	//teste com %
-	/*ft_printf("%04%|\n");
+	printf("%s", "TESTE COM %%: \n");
+	ft_printf("%04%|\n");
+	printf("%04%|\n");
 	ft_printf("%-4%|\n");
+	printf("%-4%|\n");
 	ft_printf("%3%|\n");
-	ft_printf("%*%|\n", 3);
-	ft_printf("%*%|\n", -3);*/
+	printf("%3%|\n");
+	ft_printf("%*%|\n", -3);
+	printf("%*%|\n", -3);
 	//
 	//teste com s
-	/*printf("%.3s|\n", "caio");
+	printf("%s", "TESTE COM S: \n");
+	printf("%.3s|\n", "caio");
 	ft_printf("%.3s|\n", "caio");
 	printf("%10.2s|\n", "caio");
 	ft_printf("%10.2s|\n", "caio");
@@ -92,10 +100,11 @@ int main(void)
 	printf("%*.1s|\n", 5, "caio");
 	ft_printf("%*.1s|\n", 5, "caio");
 	//printf("%0-6s|\n", "caio");
-	ft_printf("%0-6s|\n", "caio");*/
+	ft_printf("%0-6s|\n", "caio");
 	//
 	//teste com d e i
-	/*ft_printf("%*d|\n", -3, -3);
+	printf("%s", "TESTE COM I: \n");
+	ft_printf("%*d|\n", -3, -3);
 	printf("%*d|\n", -3, -3);
 	printf("%3i|\n", 3);
 	ft_printf("%3i|\n", 3);
@@ -126,24 +135,25 @@ int main(void)
 	printf("%d|\n", -2147483647);
 	ft_printf("%d|\n", -2147483647);
 	printf("%d|\n", -2147483647);
-	ft_printf("%d|\n", -2147483647);*/
+	ft_printf("%d|\n", -2147483647);
 	//
 	//teste com p
-	/*int a;
+	printf("%s", "TESTE COM P: \n");
 	printf("%-20p|\n", &a);
 	ft_printf("%-20p|\n", &a);
 	printf("%*p|\n", -20, &a);
-	ft_printf("%*p|\n", -20, &a);*/
+	ft_printf("%*p|\n", -20, &a);
 	//printf("%020p|\n", &a); } undefined behavior
 	//ft_printf("%020p|\n", &a) }; undefined behavior
-	/*printf("%p|\n", &a);
+	printf("%p|\n", &a);
 	ft_printf("%p|\n", &a);
 	printf("%15p|\n", &a);
-	ft_printf("%15p|\n", &a);*/
+	ft_printf("%15p|\n", &a);
 	//printf("%.20p|\n", &a); } undefined behavior
 	//ft_printf("%.20p|\n", &a); } undefined behavior
 	//
 	//teste com u
+	printf("%s", "TESTE COM U: \n");
 	printf("%*u|\n", -3, -3);
 	ft_printf("%*u|\n", -3, -3);
 	printf("%3u|\n", 3);
@@ -172,10 +182,10 @@ int main(void)
 	ft_printf("%2.6u|\n", 3323323);
 	printf("%*.*u|\n", 6, 3, 56);
 	ft_printf("%*.*u|\n", 6, 3, 56);
+	printf("%u|\n", 2147483647);
+	ft_printf("%u|\n", 2147483647);
 	printf("%u|\n", -2147483647);
 	ft_printf("%u|\n", -2147483647);
-	printf("%u|\n", -2147483647);
-	ft_printf("%u|\n", -2147483647);
-
+	
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:29 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/11 16:27:14 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:07:33 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printx(s_mold *mold, va_list ap)
+void	printx(t_mold *mold, va_list ap)
 {
 	int		n;
 	int		len;
@@ -35,7 +35,6 @@ void	printx(s_mold *mold, va_list ap)
 		str = ft_strjoin(r_str_x('0', mold->precision - ft_strlen(str)), str);
 	(mold->precision == 0) ? mold->zero = 0 : 0;
 	len += (len == 0) ? 0 : -ft_strlen(str);
-
 	mold->len += (mold->minus) ? putcs_x(str, ' ', len, 0) : 0;
 	mold->len += (mold->zero) ? putcs_x(str, '0', len, 1) : 0;
 	mold->len += (!mold->minus && !mold->zero) ? putcs_x(str, ' ', len, 1) : 0;

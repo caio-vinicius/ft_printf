@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printpercent.c                                     :+:      :+:    :+:   */
+/*   r_str_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/10 15:20:26 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 11:06:12 by csouza-f         ###   ########.fr       */
+/*   Created: 2020/03/12 10:43:08 by csouza-f          #+#    #+#             */
+/*   Updated: 2020/03/12 11:01:29 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printpercent(t_mold *mold, va_list ap)
+char	*r_str_x(char c, unsigned int x)
 {
-	int len;
+	unsigned int	i;
+	char			*str;
 
-	len = 0;
-	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
-	if (len < 0)
+	i = 0;
+	if (!(str = ft_calloc(x + 1, sizeof(char))))
+		return (0);
+	while (i < x)
 	{
-		mold->minus = 1;
-		len *= -1;
+		str[i] = c;
+		i++;
 	}
-	(mold->width > 0) ? len = mold->width : 0;
-	(mold->zero == 1 && mold->minus == 1) ? mold->zero = 0 : 0;
-	(mold->minus) ? putcs_x("%", ' ', len - 1, 0) : 0;
-	(mold->zero) ? putcs_x("%", '0', len - 1, 1) : 0;
-	(!mold->minus && !mold->zero) ? putcs_x("%", ' ', len - 1, 1) : 0;
+	return (str);
 }

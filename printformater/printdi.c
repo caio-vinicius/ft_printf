@@ -6,19 +6,19 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:23 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/11 20:18:26 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/12 11:03:35 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-void	printdi(s_mold *mold, va_list ap)
+void	printdi(t_mold *mold, va_list ap)
 {
-    char *n;
-	int len;
-	
+	char	*n;
+	int		len;
+
 	len = 0;
-    (mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
+	(mold->asterisk_width == 1) ? len = va_arg(ap, int) : 0;
 	(mold->asterisk_precision == 1) ? mold->precision = va_arg(ap, int) : 0;
 	if (len < 0)
 	{
@@ -26,7 +26,7 @@ void	printdi(s_mold *mold, va_list ap)
 		len *= -1;
 	}
 	n = ft_itoa(va_arg(ap, int));
-	if (mold->precision > 0 && mold->precision > ft_strlen(n))
+	if (mold->precision > 0 && mold->precision > (int)ft_strlen(n))
 		n = ft_strjoin(r_str_x('0', mold->precision - ft_strlen(n)), n);
 	(mold->precision > 0) ? mold->zero = 0 : 0;
 	(mold->width > 0) ? len = mold->width : 0;
