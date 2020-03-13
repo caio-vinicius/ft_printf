@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:43:08 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 11:01:29 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 17:33:07 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 char	*r_str_x(char c, unsigned int x)
 {

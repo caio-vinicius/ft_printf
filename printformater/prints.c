@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:12 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 11:02:37 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 17:30:50 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 void	prints(t_mold *mold, va_list ap)
 {
@@ -26,13 +26,16 @@ void	prints(t_mold *mold, va_list ap)
 		len *= -1;
 	}
 	str = (va_arg(ap, char *));
+	(str == NULL) ? str = "(null)" : 0;
 	(mold->width > 0) ? len = mold->width : 0;
-	if (mold->precision < (int)ft_strlen(str) && mold->precision > 0)
+	if (mold->precision <= (int)ft_strlen(str) && mold->precision >= 0)
 		str = ft_str_until(str, ft_strlen(str), mold->precision);
 	len += (len == 0) ? 0 : -ft_strlen(str);
 	(len < 0) ? len = 0 : 0;
+	(mold->zero == 1 && mold->minus == 1) ? mold->zero = 0 : 0;
 	mold->len += (mold->minus) ? putcs_x(str, ' ', len, 0) : 0;
-	mold->len += (!mold->minus) ? putcs_x(str, ' ', len, 1) : 0;
-	if (mold->precision <= (int)ft_strlen(str) && mold->precision > 0)
+	mold->len += (mold->zero) ? putcs_x(str, '0', len, 1) : 0;
+	mold->len += (!mold->minus && !mold->zero) ? putcs_x(str, ' ', len, 1) : 0;
+	if (mold->precision <= (int)ft_strlen(str) && mold->precision >= 0)
 		free(str);
 }

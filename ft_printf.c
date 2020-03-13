@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:27:11 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 16:10:11 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 13:59:35 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 /*
 **				| sort_specifier function |
@@ -109,9 +109,10 @@ static t_mold	*findone_formater(char *str, t_mold *mold)
 				(str[i++] == '0') ? mold->zero = 1 : 0;
 			}
 			i = search_dora(str, mold, i);
-			if (str[i] == '.')
-				i = search_dora(str, mold, ++i);
+			(str[i] == '.') ? i = search_dora(str, mold, ++i) : 0;
 			mold->type = str[i++];
+			//igor
+			(mold->type == '\0') ? mold = 0 : 0;
 		}
 		return (mold);
 	}

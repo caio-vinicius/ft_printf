@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINF_H
+# define FT_PRINF_H
 
 # include "libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# define ALL "cspdiuxX%-0.*"
 # define SPECIFIERS "cspdiuxX%"
 # define FLAGS "-0"
 

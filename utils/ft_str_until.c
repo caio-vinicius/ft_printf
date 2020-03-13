@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:40:49 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 11:00:58 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 12:15:30 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 char	*ft_str_until(char *str, int len, int until)
 {

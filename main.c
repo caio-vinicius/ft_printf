@@ -6,16 +6,16 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 16:05:58 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 17:08:38 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int main(void)
 {
-	int a;
+	//int a;
 	//teste com c
 	/*printf("%s", "TESTE COM C: \n");
 	ft_printf("PRINTF: %-5c|\n", 'c');
@@ -94,7 +94,6 @@ int main(void)
 	printf("%05%|\n");
 	ft_printf("%0-5%|\n");
 	printf("%0-5%|\n");*/
-	ft_printf("%|\n");
 	//printf("%|\n");
 	//
 	//teste com s
@@ -198,6 +197,9 @@ int main(void)
 	ft_printf("%u|\n", 2147483647);
 	printf("%u|\n", -2147483647);
 	ft_printf("%u|\n", -2147483647);*/
+
+	ft_printf("%07i|\n", -34);
+	//printf("%09s|\n", NULL);
 	
 	return (0);
 }

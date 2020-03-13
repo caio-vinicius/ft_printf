@@ -6,7 +6,7 @@
 #    By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/15 16:26:14 by csouza-f          #+#    #+#              #
-#    Updated: 2020/03/12 12:43:06 by csouza-f         ###   ########.fr        #
+#    Updated: 2020/03/13 14:38:38 by csouza-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ F_UTILS		=	./utils
 F_LIBFT		=	./libft
 
 SRCS		=	ft_printf.c						\
-				${F_INCLUDES}/ft_printf_utils.c	\
 				${F_INCLUDES}/ft_printf_utils.c	\
 				${F_PF}/printc.c				\
 				${F_PF}/printdi.c				\
@@ -46,9 +45,9 @@ RE_O 		= 	ft_printf.o						\
 				${F_PF}/printu.o				\
 				${F_PF}/printx.o				\
 				${F_UTILS}/ft_itoa_base.o		\
-				${F_UTILS}/ft_putohar_x.o		\
+				${F_UTILS}/ft_putchar_x.o		\
 				${F_UTILS}/ft_str_until.o		\
-				${F_UTILS}/putos_x.o			\
+				${F_UTILS}/putcs_x.o			\
 				${F_UTILS}/r_str_x.o
 
 OBJS = $(SRCS:.c=.o)
@@ -71,6 +70,7 @@ clean :
 	$(MAKE) clean -C ./libft
 	rm -rf $(RE_O)
 	rm -rf $(OBJS)
+	rm *.o
 
 fclean : clean
 	$(MAKE) fclean -C ./libft

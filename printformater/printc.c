@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:26:54 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 10:50:51 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 12:15:30 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 void	printc(t_mold *mold, va_list ap)
 {

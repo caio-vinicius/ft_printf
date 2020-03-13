@@ -6,11 +6,11 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/12 11:01:12 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/13 17:30:14 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 int	putcs_x(char *str, int c, int x, int time)
 {
