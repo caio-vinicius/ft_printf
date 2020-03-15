@@ -3,77 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+         #
+#    By: caio <caio@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/15 16:26:14 by csouza-f          #+#    #+#              #
-#    Updated: 2020/03/13 14:38:38 by csouza-f         ###   ########.fr        #
+#    Updated: 2020/03/14 20:35:33 by caio             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	libftprintf.a
+NAME =		libftprintf.a
 
-F_INCLUDES	=	./includes
+SRCS =		handles/printc.c handles/printdi.c handles/printp.c \
+			handles/printpercent.c handles/prints.c handles/printu.c \
+			handles/printx.c utils/ft_itoa_base.c utils/ft_putchar_x.c \
+			utils/ft_str_until.c utils/putcs_x.c utils/r_str_x.c \
+			ft_printf.c ft_printf_utils.c 
 
-F_PF		=	./printformater
+INC = ft_printf.h
+FLAGS = -Wall -Werror -Wextra
+NOBJS := $(SRC:func/%=%)
+OBJS = $(NOBJS:.c=.o)
+LIBFT = libft
 
-F_UTILS		=	./utils
+all: $(NAME)
 
-F_LIBFT		=	./libft
-
-SRCS		=	ft_printf.c						\
-				${F_INCLUDES}/ft_printf_utils.c	\
-				${F_PF}/printc.c				\
-				${F_PF}/printdi.c				\
-				${F_PF}/printp.c				\
-				${F_PF}/printpercent.c			\
-				${F_PF}/prints.c				\
-				${F_PF}/printu.c				\
-				${F_PF}/printx.c				\
-				${F_UTILS}/ft_itoa_base.c		\
-				${F_UTILS}/ft_putchar_x.c		\
-				${F_UTILS}/ft_str_until.c		\
-				${F_UTILS}/putcs_x.c			\
-				${F_UTILS}/r_str_x.c
-
-RE_O 		= 	ft_printf.o						\
-				${F_INCLUDES}/ft_printf_utils.o	\
-				${F_PF}/printc.o				\
-				${F_PF}/printdi.o				\
-				${F_PF}/printp.o				\
-				${F_PF}/printperoent.o			\
-				${F_PF}/prints.o				\
-				${F_PF}/printu.o				\
-				${F_PF}/printx.o				\
-				${F_UTILS}/ft_itoa_base.o		\
-				${F_UTILS}/ft_putchar_x.o		\
-				${F_UTILS}/ft_str_until.o		\
-				${F_UTILS}/putcs_x.o			\
-				${F_UTILS}/r_str_x.o
-
-OBJS = $(SRCS:.c=.o)
-
-CC = gcc
-
-FLAGS = -c -Wall -Wextra -Werror
-
-INCLUDES = libftprintf.h
-
-$(NAME): $(OBJS)
-	$(MAKE) -C ./libft
+$(NAME):
+	$(MAKE) -C $(LIBFT)
 	cp libft/libft.a $(NAME)
-	$(CC) $(FLAGS) -I $(INCLUDES) $(SRCS)
+	gcc $(FLAGS) -c $(SRCS) $(INC)
 	ar -rcs $(NAME) $(OBJS)
 
-all : $(NAME)
+clean:
+	rm -f $(OBJS)
+	make clean -C $(LIBFT)
 
-clean :
-	$(MAKE) clean -C ./libft
-	rm -rf $(RE_O)
-	rm -rf $(OBJS)
-	rm *.o
+fclean: clean
+	rm -f $(NAME)
+	make fclean -C $(LIBFT)
 
-fclean : clean
-	$(MAKE) fclean -C ./libft
-	rm -rf $(NAME)
-
-re : fclean all
+re: fclean all

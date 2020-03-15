@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: csouza-f <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: caio <caio@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/31 16:22:27 by csouza-f          #+#    #+#              #
-#    Updated: 2020/02/03 18:32:02 by csouza-f         ###   ########.fr        #
+#    Updated: 2020/03/14 11:34:07 by caio             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,12 @@ INCLUDES = libft.h
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -I$(INCLUDES) -c $(SRC)
+	gcc $(FLAGS) $(INCLUDES) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 bonus:
-	gcc $(FLAGS) -I$(INCLUDES) -c $(BONUS_SRC)
+	gcc $(FLAGS) $(INCLUDES) -c $(BONUS_SRC)
 	ar rc $(NAME) $(BONUS_OBJ)
 	ranlib $(NAME)
 
