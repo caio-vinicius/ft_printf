@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 18:50:30 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/14 16:52:10 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/15 20:05:09 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ int main(void)
 	printf("PRINTF: %c|\n", 'c');
 	//
 	//teste com x e X
+	int a01, a02, a03, a04, a05, a06, a07, a08, a09, a10;
+	int i, j;
+	i = ft_printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10);
+	j = printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10);
+	printf("\nvalor de i: %d, valor de j: %d", i, j);
+	int a01, a02, a03, a04, a05, a06, a07, a08, a09, a10, a11, a12;
+	int i, j;
+	i = ft_printf("%p %p %p %p %p %p %p %p %p %p %p %p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	j = printf("%p %p %p %p %p %p %p %p %p %p %p %p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);
+	printf("\nvalor de i: %d, valor de j: %d", i, j);
 	printf("%s", "TESTE COM x e X: \n");
 	ft_printf("PRINTF: %7X|\n", 255);
 	printf("PRINTF: %7X|\n", 255);
@@ -149,6 +159,9 @@ int main(void)
 	ft_printf("%d|\n", -2147483647);
 	//
 	//teste com p
+	//int a01, a02, a03, a04, a05, a06, a07, a08, a09, a10;
+	//ft_printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10);
+	//printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p|\n",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10);
 	printf("%s", "TESTE COM P: \n");
 	printf("%-20p|\n", &a);
 	ft_printf("%-20p|\n", &a);
@@ -197,9 +210,8 @@ int main(void)
 	ft_printf("%u|\n", 2147483647);
 	printf("%u|\n", -2147483647);
 	ft_printf("%u|\n", -2147483647);*/
-
-	ft_printf("%x|\n", 4294967295u);
-	printf("%x|\n", 4294967295u);
 	
+	ft_printf("%d|\n", -2147483648);
+	//printf("%d|\n", -2147483648);
 	return (0);
 }

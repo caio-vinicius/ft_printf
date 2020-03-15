@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:39:40 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/13 12:15:30 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/03/15 13:30:42 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ char	*ft_itoa_base(size_t value, size_t base)
 	int			i;
 	char		*str;
 	size_t		tmp;
+	size_t		test;
 
 	i = 0;
 	tmp = value;
+	test = -1;
+	if (tmp == test)
+		tmp = 2147483647;
 	while (tmp >= base)
 	{
 		tmp = tmp / base;

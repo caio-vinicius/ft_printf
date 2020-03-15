@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prints.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: caio <caio@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:12 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/14 00:40:24 by caio             ###   ########.fr       */
+/*   Updated: 2020/03/15 19:28:47 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ void	prints(t_mold *mold, va_list ap)
 	len += (len == 0) ? 0 : -ft_strlen(str);
 	(len < 0) ? len = 0 : 0;
 	(mold->zero == 1 && mold->minus == 1) ? mold->zero = 0 : 0;
-	mold->len += (mold->minus) ? putcs_x(str, ' ', len, 0) : 0;
-	mold->len += (mold->zero) ? putcs_x(str, '0', len, 1) : 0;
-	mold->len += (!mold->minus && !mold->zero) ? putcs_x(str, ' ', len, 1) : 0;
+	mold->len += (mold->minus) ? putcs_x(str, ' ', len, 0, 1) : 0;
+	mold->len += (mold->zero) ? putcs_x(str, '0', len, 1, 1) : 0;
+	mold->len += (!mold->minus && !mold->zero) ? putcs_x(str, ' ', len, 1, 1) : 0;
 	if (mold->precision <= (int)ft_strlen(str) && mold->precision >= 0)
 		free(str);
 }
-
