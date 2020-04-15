@@ -14,21 +14,22 @@
 
 int	putcs_x(char *str, int c, int x, int time, int nbr)
 {
-	int len;
+	int		len;
 
 	len = 0;
 	(nbr < 0 && x != 0) ? x-- : 0;
 	if (time == 0)
 	{
-		//(nbr < 0) ? len += ft_putchar('-') : 0;
+		(nbr < 0) ? len += ft_putchar('-') : 0;
 		len += ft_putstr(str);
 		len += ft_putchar_x(c, x);
 	}
 	else if (time == 1)
 	{
-		//(nbr < 0 && c == '0') ? len += ft_putchar('-') : 0;
+		(nbr < 0 && c == '0') ? len += ft_putchar('-') : 0;
 		len += ft_putchar_x(c, x);
-		//(nbr < 0 && c == ' ') ? len += ft_putchar('-') : 0;
+		if (nbr < 0 && nbr >= -2147483647 && c == ' ')
+			len += ft_putchar('-');
 		len += ft_putstr(str);
 	}
 	return (len);
