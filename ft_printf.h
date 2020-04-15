@@ -47,7 +47,7 @@ void			printpercent(t_mold *mold, va_list ap);
 int				ft_putchar_x(char c, unsigned int x);
 char			*r_str_x(char c, unsigned int x);
 int				has_digit(int i, char *str);
-char			*ft_itoa_base(size_t value, size_t base);
+char			*ft_itoa_base(unsigned int value, size_t base);
 int				putcs_x(char *str, int c, int x, int time, int nbr);
 char			*ft_str_until(char *str, int len, int until);
 
