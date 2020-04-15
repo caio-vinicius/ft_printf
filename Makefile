@@ -28,6 +28,7 @@ SRCS		=	ft_printf.c						\
 				${F_HD}/printu.c				\
 				${F_HD}/printx.c				\
 				${F_UTILS}/ft_itoa_base.c		\
+				${F_UTILS}/ft_itoa_base2.c		\
 				${F_UTILS}/ft_putchar_x.c		\
 				${F_UTILS}/ft_str_until.c		\
 				${F_UTILS}/putcs_x.c			\
@@ -43,6 +44,7 @@ RE_O 		= 	ft_printf.o						\
 				${F_HD}/printu.o				\
 				${F_HD}/printx.o				\
 				${F_UTILS}/ft_itoa_base.o		\
+				${F_UTILS}/ft_itoa_base2.o		\
 				${F_UTILS}/ft_putchar_x.o		\
 				${F_UTILS}/ft_str_until.o		\
 				${F_UTILS}/putcs_x.o			\
