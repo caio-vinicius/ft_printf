@@ -211,7 +211,7 @@ int main(void)
 	printf("%u|\n", -2147483647);
 	ft_printf("%u|\n", -2147483647);*/
 	
-	ft_printf("%d|\n", -2147483648);
-	//printf("%d|\n", -2147483648);
+	ft_printf("%d|\n", -2147483647);
+	printf("%d|\n", -2147483647);
 	return (0);
 }
