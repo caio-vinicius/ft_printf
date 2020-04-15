@@ -22,7 +22,7 @@ char	*ft_itoa_base(size_t value, size_t base)
 	i = 0;
 	tmp = value;
 	test = -1;
-	if (tmp == test)
+	if (tmp <= test)
 		tmp = 2147483647;
 	while (tmp >= base)
 	{
