@@ -17,7 +17,7 @@ int	putcs_x(char *str, int c, int x, int time, int nbr)
 	int len;
 
 	len = 0;
-	//(nbr < 0 && x != 0) ? x-- : 0;
+	(nbr < 0 && x != 0) ? x-- : 0;
 	if (time == 0)
 	{
 		//(nbr < 0) ? len += ft_putchar('-') : 0;
