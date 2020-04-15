@@ -12,14 +12,18 @@
 
 #include "../ft_printf.h"
 
-char	*ft_itoa_base(unsigned int value, size_t base)
+char	*ft_itoa_base2(size_t value, size_t base)
 {
 	int			i;
 	char		*str;
-	unsigned int		tmp;
+	size_t		tmp;
+	size_t		test;
 
 	i = 0;
 	tmp = value;
+	test = -1;
+	if (tmp == test)
+		tmp = 2147483647;
 	while (tmp >= base)
 	{
 		tmp = tmp / base;
