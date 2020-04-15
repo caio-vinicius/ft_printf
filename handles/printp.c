@@ -25,7 +25,7 @@ void	printp(t_mold *mold, va_list ap)
 		mold->minus = 1;
 		len *= -1;
 	}
-	n = myitoabase(va_arg(ap, size_t), 16);
+	n = ft_itoa_base2(va_arg(ap, size_t), 16);
 	(mold->width > 0) ? len = mold->width : 0;
 	if (mold->precision > 0 && mold->precision > (int)ft_strlen(n))
 		n = ft_strjoin(r_str_x('0', mold->precision - ft_strlen(n)), n);
