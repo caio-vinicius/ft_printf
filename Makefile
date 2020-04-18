@@ -6,7 +6,7 @@
 #    By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/15 16:26:14 by csouza-f          #+#    #+#              #
-#    Updated: 2020/03/15 13:10:06 by csouza-f         ###   ########.fr        #
+#    Updated: 2020/04/18 17:59:52 by csouza-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ NAME		=	libftprintf.a
 F_HD		=	./handles
 
 F_UTILS		=	./utils
-
-F_LIBFT		=	./libft
 
 SRCS		=	ft_printf.c						\
 				ft_printf_utils.c				\
@@ -34,46 +32,44 @@ SRCS		=	ft_printf.c						\
 				${F_UTILS}/putcs_x.c			\
 				${F_UTILS}/r_str_x.c
 
-RE_O 		= 	ft_printf.o						\
+OBJS 		= 	ft_printf.o						\
 				ft_printf_utils.o				\
-				${F_HD}/printc.o				\
-				${F_HD}/printdi.o				\
-				${F_HD}/printp.o				\
-				${F_HD}/printperoent.o			\
-				${F_HD}/prints.o				\
-				${F_HD}/printu.o				\
-				${F_HD}/printx.o				\
-				${F_UTILS}/ft_itoa_base.o		\
-				${F_UTILS}/ft_itoa_base2.o		\
-				${F_UTILS}/ft_putchar_x.o		\
-				${F_UTILS}/ft_str_until.o		\
-				${F_UTILS}/putcs_x.o			\
-				${F_UTILS}/r_str_x.o
-
-OBJS = $(SRCS:.c=.o)
+				printc.o				\
+				printdi.o				\
+				printp.o				\
+				printpercent.o			\
+				prints.o				\
+				printu.o				\
+				printx.o				\
+				ft_itoa_base.o		\
+				ft_itoa_base2.o		\
+				ft_putchar_x.o		\
+				ft_str_until.o		\
+				putcs_x.o			\
+				r_str_x.o
 
 CC = gcc
 
-FLAGS = -c -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -c
 
-INCLUDES = libftprintf.h
+INCLUDES = ft_printf.h
+
+all: $(NAME)
 
 $(NAME): $(OBJS)
+
+$(OBJS): $(SRCS) $(INCLUDES)
 	$(MAKE) -C ./libft
 	cp libft/libft.a $(NAME)
 	$(CC) $(FLAGS) -I $(INCLUDES) $(SRCS)
-	ar -rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-all : $(NAME)
-
-clean :
+clean:
 	$(MAKE) clean -C ./libft
-	rm -rf $(RE_O)
 	rm -rf $(OBJS)
-	rm *.o
 
-fclean : clean
+fclean: clean
 	$(MAKE) fclean -C ./libft
 	rm -rf $(NAME)
 
-re : fclean all
+re: fclean all
