@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:39:40 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/03/15 13:30:42 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/04/18 19:41:38 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_itoa_base(unsigned int value, size_t base)
 {
-	int			i;
-	char		*str;
-	unsigned int		tmp;
+	int				i;
+	char			*str;
+	unsigned int	tmp;
 
 	i = 0;
 	tmp = value;
