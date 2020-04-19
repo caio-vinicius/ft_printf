@@ -27,7 +27,7 @@ int	ft_cs(char *str, int c, int x, int time, int nbr)
 	}
 	else if (time == 1)
 	{
-		(nbr < 0 && c == '0') ? len += ft_putchar('-') : 0;
+		(nbr < 0 && c == '0' && nbr >= -2147483647) ? len += ft_putchar('-') : 0;
 		len += ft_putchar_x(c, x);
 		if (nbr < 0 && nbr >= -2147483647 && c == ' ')
 			len += ft_putchar('-');
