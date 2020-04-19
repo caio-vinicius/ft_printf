@@ -36,4 +36,5 @@ void	printdi(t_mold *mold, va_list ap)
 	mold->len += (mold->minus) ? ft_cs(n, ' ', len, 0, nbr) : 0;
 	mold->len += (mold->zero) ? ft_cs(n, '0', len, 1, nbr) : 0;
 	mold->len += (!mold->minus && !mold->zero) ? ft_cs(n, ' ', len, 1, nbr) : 0;
+	free(n);
 }
