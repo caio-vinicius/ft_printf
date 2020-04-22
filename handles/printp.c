@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:25 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 15:26:52 by caio             ###   ########.fr       */
+/*   Updated: 2020/04/22 16:42:35 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	printp(t_mold *mold, va_list ap)
 {
 	char	*n;
-	int	len;
+	int		len;
 	char	*tmp;
 
 	len = 0;

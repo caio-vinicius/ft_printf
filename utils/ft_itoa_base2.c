@@ -29,7 +29,7 @@ char	*ft_itoa_base2(size_t value, size_t base)
 		tmp = tmp / base;
 		i++;
 	}
-	if (!(str = (char *)ft_calloc((i + 1), sizeof(char))))
+	if (!(str = (char *)malloc((i + 1) * sizeof(char))))
 		return (NULL);
 	while (i >= 0)
 	{

@@ -6,16 +6,16 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 15:50:32 by caio             ###   ########.fr       */
+/*   Updated: 2020/04/22 16:49:31 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int get_nbr(int nbr)
+int	get_nbr(int nbr)
 {
 	static int n;
-	
+
 	if (nbr == 0)
 		n = n;
 	else
@@ -40,7 +40,8 @@ int	ft_cs(char *str, int c, int x, int time)
 	}
 	else if (time == 1)
 	{
-		(nbr < 0 && c == '0' && nbr >= -2147483647) ? len += ft_putchar('-') : 0;
+		if (nbr < 0 && c == '0' && nbr >= -2147483647)
+			len += ft_putchar('-');
 		len += ft_putchar_x(c, x);
 		if (nbr < 0 && nbr >= -2147483647 && c == ' ')
 			len += ft_putchar('-');
