@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 16:49:31 by caio             ###   ########.fr       */
+/*   Updated: 2020/04/22 16:57:06 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,13 @@
 int	get_nbr(int nbr)
 {
 	static int n;
+	int nu;
 
 	if (nbr == 0)
-		n = n;
+	{
+		nu = n;
+		n = nu;
+	}
 	else
 		n = nbr;
 	return (n);
