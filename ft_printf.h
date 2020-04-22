@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 16:31:36 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/18 19:43:13 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/04/22 15:24:58 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ char			*r_str_x(char c, unsigned int x);
 int				has_digit(int i, char *str);
 char			*ft_itoa_base(unsigned int value, size_t base);
 char			*ft_itoa_base2(size_t value, size_t base);
-int				ft_cs(char *str, int c, int x, int time, int nbr);
+int				ft_cs(char *str, int c, int x, int time);
+int				get_nbr(int nbr);
 char			*ft_str_until(char *str, int len, int until);
 
 #endif

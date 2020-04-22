@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putcs_x.c                                          :+:      :+:    :+:   */
+/*   ft_cs.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/18 19:46:22 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/04/22 15:50:32 by caio             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_cs(char *str, int c, int x, int time, int nbr)
+int get_nbr(int nbr)
 {
-	int		len;
+	static int n;
+	
+	if (nbr == 0)
+		n = n;
+	else
+		n = nbr;
+	return (n);
+}
 
+int	ft_cs(char *str, int c, int x, int time)
+{
+	int	len;
+	int	nbr;
+
+	nbr = get_nbr(0);
 	len = 0;
 	(nbr < 0 && x != 0) ? x-- : 0;
 	if (time == 0)
