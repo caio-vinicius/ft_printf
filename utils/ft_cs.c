@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 10:42:38 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 16:57:06 by csouza-f         ###   ########.fr       */
+/*   Updated: 2020/04/23 14:34:32 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int	ft_cs(char *str, int c, int x, int time)
 			len += ft_putchar('-');
 		len += ft_putstr(str);
 	}
+	get_nbr(1);
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:29 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 15:28:22 by caio             ###   ########.fr       */
+/*   Updated: 2020/04/23 13:56:25 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	printx(t_mold *mold, va_list ap)
 	(mold->zero == 1 && mold->minus == 1) ? mold->zero = 0 : 0;
 	(mold->type == 'x') ? str = ft_strmapi(ft_itoa_base(n, 16), ft_tolower) : 0;
 	(mold->type == 'X') ? str = ft_strmapi(ft_itoa_base(n, 16), ft_toupper) : 0;
-	(mold->precision > 0) ? mold->zero = 0 : 0;
+	(mold->precision >= 0) ? mold->zero = 0 : 0;
 	if (mold->precision > 0 && mold->precision > (int)ft_strlen(str))
 		str = ft_strjoin(r_str_x('0', mold->precision - ft_strlen(str)), str);
 	(mold->precision == 0 && n == 0) ? str[0] = '\0' : 0;

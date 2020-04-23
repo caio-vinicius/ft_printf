@@ -6,7 +6,7 @@
 /*   By: csouza-f <csouza-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:27:31 by csouza-f          #+#    #+#             */
-/*   Updated: 2020/04/22 16:42:46 by caio             ###   ########.fr       */
+/*   Updated: 2020/04/23 13:54:17 by csouza-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	printu(t_mold *mold, va_list ap)
 	if (mold->precision > 0 && mold->precision > (int)ft_strlen(n))
 		n = ft_strjoin(r_str_x('0', mold->precision - (int)ft_strlen(n)), n);
 	(mold->precision == 0 && n[0] == '0') ? n[0] = '\0' : 0;
-	(mold->precision > 0) ? mold->zero = 0 : 0;
+	(mold->precision >= 0) ? mold->zero = 0 : 0;
 	(mold->width > 0) ? len = mold->width : 0;
 	(mold->zero == 1 && mold->minus == 1) ? mold->zero = 0 : 0;
 	len += (len == 0) ? 0 : -ft_strlen(n);
